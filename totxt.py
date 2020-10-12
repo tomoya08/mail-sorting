@@ -1,3 +1,4 @@
+
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
@@ -5,7 +6,7 @@ from pdfminer.pdfpage import PDFPage
 from io import StringIO
 from glob import glob
 
-file_list = glob('/Users/mizumuratomoya/Desktop/pythontomo2/水村富美ミズムラフミ様 ご注文カード　テスト.pdf') # PDFファイル取り込み
+file_list = glob('/Users/mizumuratomoya/Desktop/pythontomo2/*.pdf') # PDFファイル取り込み
 
 def convert_pdf_to_txt(path):
     rsrcmgr = PDFResourceManager()
@@ -39,4 +40,4 @@ for item in file_list:
 allText = ','.join(result_list) # PDFごとのテキストが配列に格納されているので連結する
 
 file = open('pdf.txt', 'w')  #書き込みモードでオープン
-file.write(allText)
+file.write(allText
