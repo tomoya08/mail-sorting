@@ -1,4 +1,3 @@
-#ファイルオープン
 f = open('/Users/mizumuratomoya/Desktop/pythontomo2/pdf.txt')
 
 order = f.read()
@@ -7,52 +6,30 @@ order = f.read()
 #改行コードで分割してリスト化
 order_list = order.splitlines()
 
-#レッド30Tのインデックス番号を取得
-red_index = order_list.index('※ 商品名 : オーガニックルイボスティー\u3000ティーパック\u30002g×30包入り\u3000\u3000スーパーグレード （軽）')
-#print(red_index)
+#インデックスナンバーを取得
+red_index_number = order_list.index('※ 商品名 : オーガニックルイボスティー　ティーパック　2g×30包入り　　スーパーグレード （軽）')
+genmai_index_number = order_list.index('※ 商品名 : しょうが玄米ルイボスティー　ティーパック　2.5g×20包入り （軽）')
+index_number_list = [red_index_number, genmai_index_number]
 
-#レッドの個数の乗っている行を取得
-red_kosuu = order_list[red_index+1]
-#print(red_kosuu)
+for index_number in index_number_list:
+    #print(index_number)
 
-#レッドの商品名の乗っている行を取得
-red_name = order_list[red_index]
-#print(red_name)
+    #商品名の乗っている行を取得
+    name = order_list[index_number]
+    #print(name)
 
-#レッドの商品名の乗っている行から商品名のみをプリント
-print(red_name[8:21])
+    #個数の乗っている行を取得
+    kosuu = order_list[index_number+1]
+    #print(kosuu)
 
-#商品の個数が乗っている行から個数のみをプリント
-print(red_kosuu[16:18])
+    #レッドの商品名の乗っている行から商品名のみをプリント
+    print(name[8:21])
 
-#-------------------------------------------------------------------------
-
-#レッド30Tのインデックス番号を取得
-genmai_index = order_list.index('※ 商品名 : しょうが玄米ルイボスティー　ティーパック　2.5g×20包入り （軽）')
-#print(red_index)
-
-#レッドの個数の乗っている行を取得
-genmai_kosuu = order_list[genmai_index+1]
-#print(red_kosuu)
-
-#レッドの商品名の乗っている行を取得
-genmai_name = order_list[genmai_index]
-#print(red_name)
-
-#レッドの商品名の乗っている行から商品名のみをプリント
-print(genmai_name[8:21])
-
-#商品の個数が乗っている行から個数のみをプリント
-print(genmai_kosuu[16:18])
-
-
+    #商品の個数が乗っている行から個数のみをプリント
+    print(kosuu[16:18])
 
 
 f.close()
-
-
-
-
 
 
 
