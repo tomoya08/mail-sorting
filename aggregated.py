@@ -1,8 +1,8 @@
+import os
 def aggregated():
+    print(os.path.exists('/Users/mizumuratomoya/Desktop/pythontomo2/pdf.txt'))
     f = open('/Users/mizumuratomoya/Desktop/pythontomo2/pdf.txt', 'r')
-
     data = f.read()
-
     red = data.count('オーガニックルイボスティー')
     green = data.count('オーガニックグリーンルイボスティー')
     orange = data.count('オレンジミックスルイボスティー')
@@ -15,7 +15,6 @@ def aggregated():
     sg = data.count('しょうが玄米')
     sp = data.count('スーパージンジャールイボスティー')
     mojito = data.count('モヒートルイボスティー')
-
     #print('レッド30Ｔ' + str(red) + '個')
     #print('グリーン25Ｔ' + str(green) + '個')
     #print('オレンジ' + str(orange) + '個')
@@ -28,10 +27,7 @@ def aggregated():
     #print('しょうが玄米' + str(sg) + '個')
     #print('スーパージンジャールイボスティー' + str(sp) + '個')
     #print('モヒート' + str(mojito) + '個')
-
-
     f.close()
-
     with open('/Users/mizumuratomoya/Desktop/pythontomo2/aggregatedresult.txt', 'w') as a:
         print('レッド30Ｔ' + str(red) + '個', file=a )
         print('グリーン25Ｔ' + str(green) + '個', file=a )
@@ -45,8 +41,6 @@ def aggregated():
         print('しょうが玄米' + str(sg) + '個', file=a )
         print('スーパージンジャールイボスティー' + str(sp) + '個', file=a )
         print('モヒート' + str(mojito) + '個', file=a )
-
     with open('/Users/mizumuratomoya/Desktop/pythontomo2/aggregatedresult.txt') as a:
         print(a.readlines())
-
-aggregated()
+#aggregated()
